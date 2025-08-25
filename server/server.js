@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./configs/db.js";
 import { clerkMiddleware } from '@clerk/express'
-import clerkWebhooks from "./controllers/ClerkWebHooks.js";
+import ClerkWebhooks from "./controllers/ClerkWebHooks.js";
 
 
 
@@ -19,7 +19,7 @@ app.use(clerkMiddleware());
 app.use(express.json());
 
 
-app.use("/api/clerk", clerkWebhooks)
+app.use("/api/clerk", ClerkWebhooks)
 
 // Routes
 app.get("/", (req, res) => res.send("API is working!"));
